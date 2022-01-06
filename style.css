@@ -46,7 +46,7 @@ html {
 }
 
 .flex-justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .mr-2 {
@@ -118,6 +118,14 @@ html {
 .footer__logo {
   display: flex;
   align-items: center;
+}
+
+.header__home-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 .header__logo {
@@ -317,19 +325,18 @@ html {
 .article h5,
 .article h6,
 .article p {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
-
 .article p {
-    font-size: 1.25rem;
-    line-height: 1.5;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 .article {
-    max-width: 80ch;
+  max-width: 80ch;
 }
 
 .article__title {
-    font-size: 2rem;
+  font-size: 2rem;
 }
