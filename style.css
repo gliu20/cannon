@@ -65,8 +65,8 @@ html {
 }
 
 .footer__content {
-    padding: 3rem 1rem;
-    align-items: stretch;
+  padding: 3rem 1rem;
+  align-items: stretch;
 }
 
 .header__content > *:not(:last-child),
@@ -112,8 +112,8 @@ html {
 }
 
 .footer__logo {
-    display:flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header__logo {
@@ -189,7 +189,7 @@ html {
 }
 
 .button--link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .section {
@@ -224,26 +224,26 @@ html {
   flex: 3;
 }
 
-
-
-
 .card {
   margin-bottom: 2rem;
   transition: 0.2s ease-out all;
+  color: #000000;
+}
+
+.card__wrapper {
+  text-decoration: none;
 }
 
 .card:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 .card:hover .card__title {
-    transition: 0.2s ease-out all;
-
+  transition: 0.2s ease-out all;
 }
 
 .card:hover .card__title {
-    color: #294973;
-} 
-
+  color: #294973;
+}
 
 .card--horizontal {
   display: flex;
