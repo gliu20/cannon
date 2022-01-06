@@ -1,0 +1,307 @@
+@font-face {
+  font-family: ImprintMTShadow;
+  src: local("ImprintMTShadow"), local("ImprintMTShadow"),
+    url("fonts/ImprintMTShadow-e6dc46473936562ec14506c2ed40ab77.ttf")
+      format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: franklinGothic;
+  src: local("franklinGothic"), local("franklinGothic"),
+    url("fonts/franklinGothic-e130d119682ecb567748343bf7f263b0.ttf")
+      format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: MinionPro;
+  src: local("MinionPro"), local("MinionPro"),
+    url("fonts/MinionPro-38711b5bb243e894a6d58c8755bb034a.otf")
+      format("truetype");
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: MinionPro, Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+  font-size: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.header,
+.footer {
+  background-color: #294973;
+  color: #ffffff;
+}
+
+.header__content,
+.footer__content {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  align-items: center;
+}
+
+.footer__content {
+    padding: 3rem 1rem;
+    align-items: stretch;
+}
+
+.header__content > *:not(:last-child),
+.footer__content > *:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.footer__about {
+  max-width: 20%;
+}
+
+.footer__about > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.footer__about-wordmark {
+  font-size: 2rem;
+  font-family: "ImprintMTShadow", Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  font-weight: normal;
+  color: #fde487;
+  text-transform: uppercase;
+}
+
+.footer__about-description {
+  font-size: 1.25rem;
+}
+
+.footer__links {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer__links-column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__links-column > * {
+  padding: 0.25rem 0.5rem;
+}
+
+.footer__logo {
+    display:flex;
+    align-items: center;
+}
+
+.header__logo {
+  height: 85px;
+  width: 85px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.header__wordmark {
+  flex: 1;
+  font-size: 48px;
+  font-family: "ImprintMTShadow", Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  font-weight: normal;
+  color: #fde487;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.header__motto {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-family: "franklinGothic", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+}
+
+.menu {
+  border-bottom: #cccccc 1px solid;
+  overflow-x: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+}
+
+.menu__content {
+  display: flex;
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+.menu__list {
+  display: flex;
+  flex: 1;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.button {
+  font-size: 1.125rem;
+  padding: 0.75rem 1.5rem;
+  padding-top: 0.875rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.button--link {
+  text-transform: none;
+  font-size: 1.25rem;
+}
+
+.button--link:hover {
+    text-decoration: underline;
+}
+
+.section {
+  padding: 1rem 1rem;
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+.section__title {
+  display: inline-block;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  border-bottom: #294973 solid 3px;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+.article-gallery {
+  display: flex;
+}
+
+.article-gallery > *:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.article-gallery__left,
+.article-gallery__right {
+  flex: 1;
+}
+.article-gallery__center {
+  flex: 3;
+}
+
+
+
+
+.card {
+  margin-bottom: 2rem;
+  transition: 0.2s ease-out all;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+.card:hover .card__title {
+    transition: 0.2s ease-out all;
+
+}
+
+.card:hover .card__title {
+    color: #294973;
+} 
+
+
+.card--horizontal {
+  display: flex;
+}
+
+.card > *:not(:last-child) {
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.card .card__title,
+.card .card__subtitle,
+.card .card__body-text {
+  margin-bottom: 0.5rem;
+}
+
+.card__title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card__subtitle {
+  text-transform: uppercase;
+}
+
+.card__body-text {
+  font-size: 1.25rem;
+}
+
+.card__media {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card__media--3by2 {
+  padding-top: 66.6%;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card--horizontal {
+  align-items: center;
+}
+
+.card--horizontal .card__media {
+  padding: 0;
+  padding-right: 20%;
+  padding-top: 13.3%;
+  margin: 0;
+  margin-right: 2rem;
+}
