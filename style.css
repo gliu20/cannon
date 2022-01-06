@@ -45,6 +45,10 @@ html {
   flex: 1;
 }
 
+.flex-justify-center {
+    justify-content: center;
+}
+
 .mr-2 {
   margin-right: 2rem;
 }
@@ -234,14 +238,14 @@ html {
   text-decoration: none;
 }
 
-.card:hover {
+.card--link:hover {
   transform: scale(1.03);
 }
-.card:hover .card__title {
+.card--link:hover .card__title {
   transition: 0.2s ease-out all;
 }
 
-.card:hover .card__title {
+.card--link:hover .card__title {
   color: #294973;
 }
 
@@ -304,4 +308,28 @@ html {
   padding-top: 13.3%;
   margin: 0;
   margin-right: 2rem;
+}
+
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6,
+.article p {
+    margin: 1rem 0;
+}
+
+
+.article p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.article {
+    max-width: 80ch;
+}
+
+.article__title {
+    font-size: 2rem;
 }
