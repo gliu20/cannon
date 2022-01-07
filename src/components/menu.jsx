@@ -6,29 +6,29 @@ import "../styles/menu.scss"
 
 const Menu = () => {
     return (
-        <nav class="menu">
-            <div class="menu__content">
-                <ul class="menu__list">
-                    <li class="menu__list-item">
-                        <a class="button button--text" href="category.html">Skule&trade;</a>
+        <nav className="menu">
+            <div className="menu__content">
+                <ul className="menu__list">
+                    <li className="menu__list-item">
+                        <a className="button button--text" href="category.html">Skule&trade;</a>
                     </li>
-                    <li class="menu__list-item">
-                        <a class="button button--text" href="category.html">Student Life</a>
+                    <li className="menu__list-item">
+                        <a className="button button--text" href="category.html">Student Life</a>
                     </li>
-                    <li class="menu__list-item">
-                        <a class="button button--text" href="category.html">Opinions</a>
+                    <li className="menu__list-item">
+                        <a className="button button--text" href="category.html">Opinions</a>
                     </li>
-                    <li class="menu__list-item">
-                        <a class="button button--text" href="category.html">Gallery</a>
+                    <li className="menu__list-item">
+                        <a className="button button--text" href="category.html">Gallery</a>
                     </li>
-                    <li class="menu__list-item">
-                        <a class="button button--text" href="category.html">Issues</a>
+                    <li className="menu__list-item">
+                        <a className="button button--text" href="category.html">Issues</a>
                     </li>
-                    <li class="menu__list-item">
-                        <a class="button button--text" href="category.html">About</a>
+                    <li className="menu__list-item">
+                        <a className="button button--text" href="category.html">About</a>
                     </li>
                 </ul>
-                <button class="search">Search</button>
+                <button className="search">Search</button>
             </div>
         </nav>
     )
