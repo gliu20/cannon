@@ -16,38 +16,6 @@
 }
 
 
-.menu {
-  border-bottom: #cccccc 1px solid;
-  overflow-x: auto;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #ffffff;
-}
-
-.menu__content {
-  display: flex;
-  max-width: 1400px;
-
-  margin: 0 auto;
-}
-
-.menu__list {
-  display: flex;
-  flex: 1;
-
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu__list-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-
 .button {
   font-size: 1.125rem;
   padding: 0.75rem 1.5rem;
