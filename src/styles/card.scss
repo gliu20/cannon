@@ -32,6 +32,10 @@
 
 .card--horizontal {
     @extend %disp-flex--sm;
+
+    & .card__header {
+        margin: 0;
+    }
 }
 
 .card > *:not(:last-child) {
@@ -59,15 +63,15 @@
 }
 
 .card--horizontal {
-    @extend %align-items-center;
+    @extend %align-items-center--sm;
 }
 
 .card--horizontal .picture {
-    padding: 0;
-    margin: 0;
 
     @media (min-width: map.get(variables.$breakpoints,"sm")) {
         & {
+            padding: 0;
+            margin: 0;
             padding-right: 20%;
             padding-top: 13.3%;
             margin-right: 2rem;
