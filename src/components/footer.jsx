@@ -23,7 +23,7 @@ const Footer = () => {
                         <ul className="footer__links-column">
                             <li><a className="button button--link" href="">About</a></li>
                             <li><a className="button button--link" href="">Contact</a></li>
-                            <li><a className="button button--link" href="">Engineering Society</a></li>
+                            <li><a className="button button--link" href="">EngSoc</a></li>
                         </ul>
                         <ul className="footer__links-column">
                             <li><a className="button button--link" href="">Past Issues</a></li>

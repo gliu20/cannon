@@ -58,6 +58,8 @@
     @extend %disp-block;
     @extend %disp-flex--sm;
     @extend %justify-content-flex-start;
+    @extend %justify-content-space-around--md;
+    @extend %flex-1--sm;
 }
 
 .footer__links-column {
