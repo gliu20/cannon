@@ -1,0 +1,71 @@
+@use "variables";
+@use "utilities";
+@use "layout";
+
+.header {
+    background-color: variables.$primary;
+    color: variables.$white;
+}
+
+.header__content {
+    @include layout.section;
+    @extend %disp-flex;
+    align-items: center;
+}
+
+.header__content .header__home-link {
+    @extend %disp-flex;
+    flex: 1;
+    align-items: center;
+
+    text-decoration: none;
+    color: inherit;
+}
+
+.header__logo {
+    @extend %disp-none;
+    @extend %disp-inline-block--xs;
+
+    @extend %h-3;
+    @extend %w-3;
+    @extend %h-4--sm;
+    @extend %w-4--sm;
+    @extend %h-5--md;
+    @extend %w-5--md;
+
+
+    border-radius: 100%;
+}
+
+.header__wordmark {
+    flex: 1;
+
+    @extend %font-size-h3;
+    @extend %font-size-h2--sm;
+    @extend %font-size-h1--md;
+    font-family: variables.$fontBrand;
+    font-weight: normal;
+    color: variables.$accentLight;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header__motto {
+    @extend %disp-none;
+    @extend %disp-flex--xs;
+    flex-direction: column;
+    
+    text-transform: uppercase;
+    font-family: variables.$fontMotto;
+}
+
+.header__motto > :not(:last-child) {
+    @extend %disp-none;
+    @extend %disp-block--md;
+}
+
+.header__motto > :last-child {
+    @extend %disp-flex;
+    @extend %disp-block--md;
+    flex-direction: column;
+}

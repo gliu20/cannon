@@ -1,0 +1,135 @@
+@use "sass:map";
+@use "sass:color";
+
+// define design tokens
+
+// breakpoints
+$breakpoints: (
+    "xs": 380px,
+    "sm": 600px,
+    "md": 1200px,
+    "lg": 1400px,
+);
+
+// colors
+$primary: #294973;
+$accent: #fac809;
+$accentLight: #fde487;
+
+$white: #ffffff;
+$black: #000000;
+$nearBlack: darken($primary, 26%);
+
+// borders
+$borderLight: 1px solid #cccccc;
+$borderPrimary: 3px solid $primary;
+
+$dimensions: map.merge(
+    $breakpoints,
+    (
+        "1-12": 1 / 12 * 100%,
+        "2-12": 2 / 12 * 100%,
+        "3-12": 3 / 12 * 100%,
+        "4-12": 4 / 12 * 100%,
+        "5-12": 5 / 12 * 100%,
+        "6-12": 6 / 12 * 100%,
+        "7-12": 7 / 12 * 100%,
+        "8-12": 8 / 12 * 100%,
+        "9-12": 9 / 12 * 100%,
+        "10-12": 10 / 12 * 100%,
+        "11-12": 11 / 12 * 100%,
+        "12-12": 12 / 12 * 100%,
+        "0": 0,
+        "1": 1rem,
+        "2": 2rem,
+        "3": 3rem,
+        "4": 4rem,
+        "5": 5rem,
+        "auto": auto,
+    )
+);
+
+// spacing intervals (for margin and padding)
+$spacing: (
+    "0": 0,
+    "0_25": 0.25rem,
+    "0_5": 0.5rem,
+    "0_75": 0.75rem,
+    "1": 1rem,
+    "1_5": 1.5rem,
+    "2": 2rem,
+    "3": 3rem,
+);
+
+// fonts
+$fontBrand: "ImprintMTShadow", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+$fontMotto: "franklinGothic", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+$fontBody: MinionPro, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+// font sizing
+$fontSizes: (
+    "body-4": 0.875rem,
+    "body-3": 1rem,
+    "body-2": 1.125rem,
+    "body-1": 1.25rem,
+    "h3": 1.5rem,
+    "h2": 2rem,
+    "h1": 3rem,
+);
+
+$display: (
+    "block": block,
+    "inline-block": inline-block,
+    "inline": inline,
+    "flex": flex,
+    "inline-flex": inline-flex,
+    "none": none,
+);
+
+$flexDirection: (
+    "row": row,
+    "row-reverse": row-reverse,
+    "column": column,
+    "column-reverse": column-reverse,
+);
+
+$flexScale: (
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "11": 11,
+    "12": 12,
+);
+
+$flexWrap: (
+    "nowrap": nowrap,
+    "wrap": wrap,
+    "wrap-reverse": wrap-reverse,
+);
+
+$flexJustify: (
+    "flex-start": flex-start,
+    "flex-end": flex-end,
+    "center": center,
+    "space-between": space-between,
+    "space-around": space-around,
+    "space-evenly": space-evenly,
+    "stretch": stretch,
+);
+
+$flexAlign: (
+    "auto": auto,
+    "flex-start": flex-start,
+    "flex-end": flex-end,
+    "center": center,
+    "baseline": baseline,
+    "stretch": stretch,
+);

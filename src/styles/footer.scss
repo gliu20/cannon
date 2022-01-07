@@ -1,0 +1,106 @@
+@use "variables";
+@use "utilities";
+@use "layout";
+
+.footer {
+    background-color: variables.$primary;
+    color: variables.$white;
+    @extend %py-1;
+    @extend %py-2--sm;
+    @extend %py-3--md;
+}
+
+.footer__content {
+    @include layout.section;
+
+    @extend %disp-block;
+    @extend %disp-flex--md;
+    @extend %align-items-stretch;
+    @extend %flex-wrap-wrap;
+}
+
+.footer__content > *:not(:last-child) {
+    @extend %mr-2--md;
+}
+
+.footer__about {
+    @extend %max-w-3-12--md;
+    @extend %flex-1;
+}
+
+.footer__about > *:not(:last-child) {
+    @extend %mb-1;
+}
+
+.footer__about-wordmark {
+    @extend %font-size-body-1;
+    @extend %font-size-h3--sm;
+    @extend %font-size-h2--md;
+    
+    font-family: variables.$fontBrand;
+    color: variables.$accentLight;
+
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.footer__about-description {
+    @extend %font-size-body-2;
+    @extend %font-size-body-1--md;
+}
+
+.footer__nav {
+    @extend %disp-flex--sm;
+    @extend %align-items-center;
+    @extend %justify-content-space-between;
+    @extend %flex-1;
+}
+
+.footer__links {
+    @extend %disp-block;
+    @extend %disp-flex--sm;
+    @extend %justify-content-flex-start;
+    @extend %justify-content-space-around--md;
+    @extend %flex-1--sm;
+}
+
+.footer__links-column {
+    list-style: none;
+
+    @extend %py-2;
+    @extend %p-0--md;
+    @extend %m-0--md;
+}
+
+.footer__links-column > * {
+    @extend %py-0_25;
+    @extend %px-0_5;
+}
+
+.footer__logo {
+    @extend %disp-flex;
+    @extend %justify-content-flex-end;
+    @extend %justify-content-center--sm;
+    @extend %align-items-center;
+}
+
+
+// TODO extract button css elsewhere
+
+.button {
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+    padding-top: 0.875rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+.button--link {
+    text-transform: none;
+    font-size: 1.25rem;
+}
+
+.button--link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,47 @@
+@use "variables";
+@use "utilities";
+@use "layout";
+
+.menu {
+    border-bottom: variables.$borderLight;
+    background-color: variables.$white;
+
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    @media (prefers-color-scheme: dark) {
+        & {
+            border-bottom: variables.$borderLight;
+            background-color: variables.$nearBlack;
+            color:variables.$white;
+        }
+    }
+}
+
+.menu__content {
+
+    @include layout.section-flat;
+    @extend %disp-flex;
+    @extend %align-items-stretch;
+}
+
+.menu__list {
+
+    @extend %disp-flex;
+
+    list-style: none;
+    @extend %m-0;
+    @extend %p-0;
+    @extend %flex-1;
+}
+
+.menu__list-item {
+    @extend %disp-flex;
+    @extend %align-items-center;
+    @extend %justify-content-center;
+    @extend %flex-1;
+
+    white-space: nowrap;
+}

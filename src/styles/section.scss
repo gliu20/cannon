@@ -1,0 +1,24 @@
+@use "layout";
+
+.section__content {
+    @include layout.section;
+}
+
+.section__title {
+    display: inline-block;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    border-bottom: #294973 solid 3px;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+}
+
+.section__description {
+    font-size: 1.25rem;
+    max-width: 60ch;
+    font-style: italic;
+}
+
+.section__header {
+    margin-bottom: 2rem;
+}
