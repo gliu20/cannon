@@ -1,5 +1,6 @@
 @use "variables";
 @use "utilities";
+@use "sass:map";
 
 .card {
     @extend %mb-2;
@@ -7,7 +8,7 @@
 
     @media (prefers-color-scheme: dark) {
         & {
-            color:variables.$white;
+            color: variables.$white;
         }
     }
 }
@@ -30,7 +31,7 @@
 }
 
 .card--horizontal {
-    @extend %disp-flex;
+    @extend %disp-flex--sm;
 }
 
 .card > *:not(:last-child) {
@@ -46,7 +47,7 @@
 
 .card__title {
     font-weight: bold;
-    font-size: 1.5rem;
+    @extend %font-size-h3;
 }
 
 .card__subtitle {
@@ -54,19 +55,24 @@
 }
 
 .card__body-text {
-    font-size: 1.25rem;
+    @extend %font-size-body-1;
 }
 
 .card--horizontal {
-    align-items: center;
+    @extend %align-items-center;
 }
 
 .card--horizontal .picture {
     padding: 0;
-    padding-right: 20%;
-    padding-top: 13.3%;
     margin: 0;
-    margin-right: 2rem;
+
+    @media (min-width: map.get(variables.$breakpoints,"sm")) {
+        & {
+            padding-right: 20%;
+            padding-top: 13.3%;
+            margin-right: 2rem;
+        }
+    }
 }
 
 .card--featured .picture {
