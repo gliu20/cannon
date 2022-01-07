@@ -7,7 +7,7 @@ import ArticleGallery from "../components/articleGallery"
 const IndexPage = () => {
   return (
     <Layout pageTitle="The Cannon Newspaper">
-      <Section title="Top Highlights">
+      <Section title="Featured">
         <ArticleGallery left={
           <div>
             <Card
