@@ -34,31 +34,6 @@
   text-decoration: underline;
 }
 
-.section {
-  padding: 1rem 1rem;
-  max-width: 1400px;
-
-  margin: 0 auto;
-}
-
-.section__title {
-  display: inline-block;
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  border-bottom: #294973 solid 3px;
-  margin-bottom: 2rem;
-  padding: 1rem 0;
-}
-
-.section__description {
-    font-size: 1.25rem;
-    max-width: 60ch;
-    font-style: italic;
-}
-
-.section__header {
-    margin-bottom: 2rem;
-}
 
 .article-gallery {
   display: flex;
