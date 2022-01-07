@@ -1,0 +1,15 @@
+@use "variables";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font-family: variables.$fontBody;
+    font-size: 100%;
+}
