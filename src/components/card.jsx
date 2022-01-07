@@ -1,9 +1,11 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import Picture from "../components/picture"
 
 import "../styles/card.scss"
 
-const Card = ({ level, title, subtitle, media, to, modifiers, children }) => {
+
+const Card = ({ level, title, subtitle, description, mediaSrc, mediaAlt, mediaModifiers, to, modifiers, children }) => {
     let titleEle;
 
     switch (level) {
@@ -31,16 +33,23 @@ const Card = ({ level, title, subtitle, media, to, modifiers, children }) => {
     }
 
     const subtitleEle = subtitle ? <p className="card__subtitle">{subtitle}</p> : ''
+
+    const descriptionEle = <p class="card__body-text">{description}</p>
+
     const headerEle = title || subtitle ?
         <header className="card__header">
             {titleEle}
+            {descriptionEle}
             {subtitleEle}
         </header> : ''
 
+
+    const pictureEle = mediaSrc ? <Picture src={mediaSrc} alt={mediaAlt} modifiers={mediaModifiers}></Picture> : ''
+
     return (
         <Link to={to} className="card__wrapper">
-            <article className={'card ' + modifiers}>
-                {media}
+            <article className={'card ' + (modifiers || '')}>
+                {pictureEle}
                 {headerEle}
                 <div className="card__content">
                     {children}

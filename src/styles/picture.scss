@@ -1,3 +1,5 @@
+@use "utilities";
+
 .picture {
     position: relative;
 }
@@ -9,7 +11,7 @@
 .picture__img {
     @extend %w-12-12;
     @extend %h-12-12;
-    
+
     object-fit: cover;
     object-position: center center;
     position: absolute;
