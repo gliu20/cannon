@@ -1,37 +1,47 @@
+@use "variables";
+@use "utilities";
+
 .card {
-    margin-bottom: 2rem;
-    transition: 0.2s ease-out all;
-    color: #000000;
+    @extend %mb-2;
+    color: variables.$black;
+
+    @media (prefers-color-scheme: dark) {
+        & {
+            color:variables.$white;
+        }
+    }
 }
 
 .card__wrapper {
     text-decoration: none;
 }
 
-.card--link:hover {
-    transform: scale(1.03);
-}
+.card,
 .card--link:hover .card__title {
     transition: 0.2s ease-out all;
 }
 
+.card--link:hover {
+    transform: scale(1.03);
+}
+
 .card--link:hover .card__title {
-    color: #294973;
+    color: variables.$primaryLight;
 }
 
 .card--horizontal {
-    display: flex;
+    @extend %disp-flex;
 }
 
 .card > *:not(:last-child) {
-    margin: 0;
-    margin-bottom: 2rem;
+    @extend %m-0;
+    @extend %mb-2;
 }
 
 .card .card__title,
 .card .card__subtitle,
 .card .card__body-text {
-    margin-bottom: 0.5rem;
+    @extend %mb-0_5;
 }
 
 .card__title {
@@ -49,7 +59,6 @@
 
 .card__media {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .card__media--3by2 {
