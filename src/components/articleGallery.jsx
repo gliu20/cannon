@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import "../styles/article-gallery.scss"
 
+// TODO add logic to make sure it looks good style wise
 
 const ArticleGallery = ({ left, center, right }) => {
     return (
