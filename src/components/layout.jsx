@@ -1,7 +1,9 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+
 import Header from './header'
 import Footer from './footer'
+import Menu from './menu';
+
 import "../styles/index.scss"
 
 const Layout = ({ pageTitle, children }) => {
@@ -10,6 +12,7 @@ const Layout = ({ pageTitle, children }) => {
       <title>{pageTitle}</title>
       
       <Header></Header>
+      <Menu></Menu>
       <main>
         {children}
 

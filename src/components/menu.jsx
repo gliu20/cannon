@@ -1,11 +1,9 @@
 import * as React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
 
-import "../styles/footer.scss"
-// TODO refactor out footer link data
-// TODO componentize socials
+import "../styles/menu.scss"
 
-const Footer = () => {
+const Menu = () => {
     return (
         <footer className="footer">
             <div className="footer__content">
@@ -43,4 +41,4 @@ const Footer = () => {
 }
 
 
-export default Footer
+export default Menu
