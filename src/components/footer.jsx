@@ -19,22 +19,24 @@ const Footer = () => {
                         <a href="">fb</a>
                     </div>
                 </div>
-                <div className="footer__links">
-                    <ul className="footer__links-column">
-                        <li><a className="button button--link" href="">About</a></li>
-                        <li><a className="button button--link" href="">Contact</a></li>
-                        <li><a className="button button--link" href="">Engineering Society</a></li>
-                    </ul>
-                    <ul className="footer__links-column">
-                        <li><a className="button button--link" href="">Past Issues</a></li>
-                        <li><a className="button button--link" href="">Skule&trade;</a></li>
-                        <li><a className="button button--link" href="">Student Life</a></li>
-                        <li><a className="button button--link" href="">Opinions</a></li>
-                        <li><a className="button button--link" href="">Gallery</a></li>
-                    </ul>
-                </div>
-                <div className="footer__logo">
-                    <StaticImage placeholder="none" className="footer__logo-img" src="../images/cannon-footer.png" alt=""></StaticImage>
+                <div className="footer__nav">
+                    <div className="footer__links">
+                        <ul className="footer__links-column">
+                            <li><a className="button button--link" href="">About</a></li>
+                            <li><a className="button button--link" href="">Contact</a></li>
+                            <li><a className="button button--link" href="">Engineering Society</a></li>
+                        </ul>
+                        <ul className="footer__links-column">
+                            <li><a className="button button--link" href="">Past Issues</a></li>
+                            <li><a className="button button--link" href="">Skule&trade;</a></li>
+                            <li><a className="button button--link" href="">Student Life</a></li>
+                            <li><a className="button button--link" href="">Opinions</a></li>
+                            <li><a className="button button--link" href="">Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div className="footer__logo">
+                        <StaticImage placeholder="none" src="../images/cannon-footer.png" alt=""></StaticImage>
+                    </div>
                 </div>
             </div>
         </footer>
