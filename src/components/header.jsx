@@ -10,8 +10,8 @@ const Header = () => {
                     <div className="header__wordmark">The Cannon</div>
                 </Link>
                 <div className="header__motto">
-                    <span>Skule&trade;&apos;s</span>
-                    <span>newspaper</span>
+                    <span>Skule&trade;&apos;s </span>
+                    <span>newspaper </span>
                     <span>since 1978</span>
                 </div>
             </div>
