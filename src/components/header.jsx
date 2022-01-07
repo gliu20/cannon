@@ -9,7 +9,7 @@ const Header = () => {
         <header className="header">
             <div className="header__content">
                 <Link className="header__home-link" to="/">
-                    <StaticImage className="header__logo" alt="" src="../images/cannon-header.png"></StaticImage>
+                    <StaticImage placeholder="none" className="header__logo" alt="" src="../images/cannon-header.png"></StaticImage>
                     <div className="header__wordmark">The Cannon</div>
                 </Link>
                 <div className="header__motto">

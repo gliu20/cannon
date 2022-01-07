@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import { StaticImage } from "gatsby-plugin-image"
 
+import "../styles/footer.scss"
 // TODO refactor out footer link data
 // TODO componentize socials
 
@@ -32,7 +34,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="footer__logo">
-                    <img src="img/cannon-footer.png" alt=""></img>
+                    <StaticImage placeholder="none" className="footer__logo-img" src="../images/cannon-footer.png" alt=""></StaticImage>
                 </div>
             </div>
         </footer>
