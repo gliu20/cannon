@@ -1,0 +1,12 @@
+@use "variables";
+@use "responsive";
+@use "sass:map";
+
+@include responsive.directionalResponsiveAll("m","margin", map.merge(variables.$spacing,("auto":auto)));
+@include responsive.directionalResponsiveAll("p","padding", variables.$spacing);
+
+@mixin rightGutter() {
+    > *:not(:last-child) {
+        @extend .mr-2
+    }
+}

@@ -1,0 +1,73 @@
+@use "variables";
+@use "sass:map";
+@use "sass:string";
+
+@mixin forEachValue ($className, $type, $prop, $values) {
+    // create style rules for each value of a given property
+    @each $valueKey, $value in $values {
+        .#{$className}-#{$valueKey}--#{$type} {
+            #{$prop}: $value;
+        }
+    }
+}
+
+// build media query for given breakpoint
+@mixin responsive ($className, $type, $prop, $values) {
+    $breakpoint: map.get(variables.$breakpoints,$type);
+
+    @media (min-width: $breakpoint) {
+        // create style rules for each value of a given property
+        @include forEachValue($className, $type, $prop, $values)
+    }
+}
+
+@mixin responsiveAll ($className, $prop, $values) {
+    // also include normal version
+    @each $valueKey, $value in $values {
+        .#{$className}-#{$valueKey} {
+            #{$prop}: $value;
+        }
+    }
+
+    // build media queries for each breakpoint
+    @each $breakpointType, $breakpointValue in variables.$breakpoints {
+        @include responsive($className, $breakpointType, $prop, $values)
+    }
+}
+
+@mixin directionalResponsiveAll ($className, $prop, $values) {
+    // main
+    @include responsiveAll($className, $prop, $values);
+
+    // vertical
+    @include responsiveAll($className + "y",direction($prop,"top"), $values);
+    @include responsiveAll($className + "y",direction($prop,"bottom"), $values);
+    @include responsiveAll($className + "t",direction($prop,"top"), $values);
+    @include responsiveAll($className + "b",direction($prop,"bottom"), $values);
+
+    // horizontal
+    @include responsiveAll($className + "x",direction($prop,"left"), $values);
+    @include responsiveAll($className + "x",direction($prop,"right"), $values);
+    @include responsiveAll($className + "l",direction($prop,"left"), $values);
+    @include responsiveAll($className + "r",direction($prop,"right"), $values);
+}
+
+// given a css property name, figure out the 
+// name of the directional equivalent
+//
+// ex: given margin, deduce that margin-top is a directional
+// equivalent
+@function direction ($prop,$direction) {
+    $prop: $prop + "-";
+    $index: string.index($prop, "-");
+
+    $beginProp: string.slice($prop, 1, $index - 1);
+    $endProp: string.slice($prop, $index + 1,-2);
+
+    @if string.length($endProp) == 0 {
+        @return $beginProp + "-" + $direction;
+    }
+    @else {
+        @return $beginProp + "-" + $direction + "-" + $endProp;
+    }
+}
