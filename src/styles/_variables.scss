@@ -17,11 +17,11 @@ $accentLight: #fde487;
 
 $white: #ffffff;
 $black: #000000;
-$near-black: darken(#294973, 50%);
+$nearBlack: darken(#294973, 50%);
 
 // borders
-$border-light: 1px solid #cccccc;
-$border-primary: 3px solid $primary;
+$borderLight: 1px solid #cccccc;
+$borderPrimary: 3px solid $primary;
 
 $dimensions: map.merge(
     $breakpoints,
