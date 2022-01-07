@@ -1,6 +1,9 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
+// TODO refactor out footer link data
+// TODO componentize socials
+
 const Footer = () => {
     return (
         <footer className="footer">
