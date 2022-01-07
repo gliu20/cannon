@@ -13,6 +13,12 @@
     @extend %pb-1;
     border-bottom: variables.$borderPrimary;
     text-transform: uppercase;
+
+    @media (prefers-color-scheme: dark) {
+        & {
+            border-bottom: variables.$borderPrimaryLight;
+        }
+    }
 }
 
 .section__description {

@@ -13,6 +13,7 @@ $breakpoints: (
 
 // colors
 $primary: #294973;
+$primaryLight: lighten(#294973,35%);
 $accent: #fac809;
 $accentLight: #fde487;
 
@@ -23,10 +24,13 @@ $nearBlack: darken($primary, 26%);
 // borders
 $borderLight: 1px solid #cccccc;
 $borderPrimary: 3px solid $primary;
+$borderPrimaryLight: 3px solid $primaryLight;
 
 $dimensions: map.merge(
     $breakpoints,
     (
+        "60ch": 60ch,
+        "80ch": 80ch,
         "1-12": calc(1 / 12) * 100%,
         "2-12": calc(2 / 12) * 100%,
         "3-12": calc(3 / 12) * 100%,
