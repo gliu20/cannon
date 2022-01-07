@@ -21,3 +21,14 @@
 @include responsive.responsiveAll("font-size","font-size",variables.$fontSizes);
 
 @include responsive.responsiveAll("disp","display", variables.$display);
+
+
+@include responsive.responsiveAll("flex-dir","flex-direction", variables.$flexDirection);
+@include responsive.responsiveAll("flex-grow","flex-grow", variables.$flexScale);
+@include responsive.responsiveAll("flex-shrink","flex-shrink", variables.$flexScale);
+@include responsive.responsiveAll("flex","flex", variables.$flexScale);
+@include responsive.responsiveAll("flex-wrap","flex-wrap", variables.$flexWrap);
+@include responsive.responsiveAll("justify-content","justify-content", variables.$flexJustify);
+@include responsive.responsiveAll("align-self","align-self", variables.$flexAlign);
+@include responsive.responsiveAll("align-items","align-items", variables.$flexAlign);
+@include responsive.responsiveAll("align-content","align-content", variables.$flexJustify);
