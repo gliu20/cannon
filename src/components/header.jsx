@@ -15,7 +15,10 @@ const Header = () => {
                 <div className="header__motto">
                     <span>Skule&trade;&apos;s </span>
                     <span>newspaper </span>
-                    <span>since 1978</span>
+                    <span>
+                        <span>since </span>
+                        <span>1978</span>
+                    </span>
                 </div>
             </div>
         </header>
