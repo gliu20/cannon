@@ -30,17 +30,18 @@ const Card = ({ level, title, subtitle, media, to, children }) => {
             break;
     }
 
+    const subtitleEle = subtitle ? <p className="card__subtitle">{subtitle}</p> : ''
+    const headerEle = title || subtitle ?
+        <header className="card__header">
+            {titleEle}
+            {subtitleEle}
+        </header> : ''
+
     return (
         <Link to={to} className="card__wrapper">
             <article className="card card--link">
                 {media}
-                {
-                    title || subtitle ?
-                        <header className="card__header">
-                            {titleEle}
-                            {subtitle ? <p className="card__subtitle">{subtitle}</p> : ''}
-                        </header> : ''
-                }
+                {headerEle}
                 <div className="card__content">
                     {children}
                 </div>
