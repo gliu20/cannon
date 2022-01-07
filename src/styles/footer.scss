@@ -5,7 +5,9 @@
 .footer {
     background-color: variables.$primary;
     color: variables.$white;
-    @extend %py-3;
+    @extend %py-1;
+    @extend %py-2--sm;
+    @extend %py-3--md;
 }
 
 .footer__content {

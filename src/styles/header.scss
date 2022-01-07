@@ -55,7 +55,7 @@
     @extend %disp-flex--xs;
     flex-direction: column;
     
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-family: variables.$fontMotto;
 }
 
