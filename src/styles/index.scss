@@ -16,21 +16,18 @@ html {
 
 @font-face {
     font-family: ImprintMTShadow;
-    src: local("ImprintMTShadow"), local("ImprintMTShadow"),
-        url("../fonts/ImprintMTShadow.ttf") format("truetype");
+    src: local("ImprintMTShadow"), local("ImprintMTShadow"), url("../fonts/ImprintMTShadow.ttf") format("truetype");
     font-style: normal;
 }
 
 @font-face {
     font-family: franklinGothic;
-    src: local("franklinGothic"), local("franklinGothic"),
-        url("../fonts/franklinGothic.ttf") format("truetype");
+    src: local("franklinGothic"), local("franklinGothic"), url("../fonts/franklinGothic.ttf") format("truetype");
     font-style: normal;
 }
 
 @font-face {
     font-family: MinionPro;
-    src: local("MinionPro"), local("MinionPro"),
-        url("../fonts/MinionPro.otf") format("truetype");
+    src: local("MinionPro"), local("MinionPro"), url("../fonts/MinionPro.otf") format("truetype");
     font-style: normal;
 }
