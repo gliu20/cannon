@@ -1,0 +1,17 @@
+@use "variables";
+@use "utilities";
+
+@mixin section {
+    
+    @extend %max-w-md--md;
+    @extend %max-w-lg--lg;
+    @extend %my-0;
+    @extend %mx-auto;
+
+    @extend %py-0_5;
+    @extend %px-1_5;
+    @extend %py-0_75--sm;
+    @extend %px-2--sm;
+    @extend %py-1--md;
+    @extend %px-3--md;
+}
