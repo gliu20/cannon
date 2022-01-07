@@ -5,7 +5,7 @@
 @mixin forEachValue ($className, $type, $prop, $values) {
     // create style rules for each value of a given property
     @each $valueKey, $value in $values {
-        .#{$className}-#{$valueKey}--#{$type} {
+        %#{$className}-#{$valueKey}--#{$type} {
             #{$prop}: $value;
         }
     }
@@ -24,7 +24,7 @@
 @mixin responsiveAll ($className, $prop, $values) {
     // also include normal version
     @each $valueKey, $value in $values {
-        .#{$className}-#{$valueKey} {
+        %#{$className}-#{$valueKey} {
             #{$prop}: $value;
         }
     }

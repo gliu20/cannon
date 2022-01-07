@@ -12,10 +12,10 @@
     display: flex;
     align-items: center;
     max-width: 1400px;
-    @extend .my-0;
-    @extend .mx-auto;
-    @extend .py-1;
-    @extend .px-3;
+    @extend %my-0;
+    @extend %mx-auto;
+    @extend %py-1;
+    @extend %px-3;
 }
 
 .header__content
