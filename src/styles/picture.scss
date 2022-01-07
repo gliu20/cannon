@@ -1,0 +1,20 @@
+.picture {
+    position: relative;
+}
+
+.picture--3by2 {
+    padding-top: 66.6%;
+}
+
+.picture__img {
+    @extend %w-12-12;
+    @extend %h-12-12;
+    
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
