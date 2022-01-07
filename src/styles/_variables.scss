@@ -15,11 +15,9 @@ $primary: #294973;
 $accent: #fac809;
 $accent-light: #fde487;
 
-$placeholder: rgba(255, 255, 255, 0.6);
-$placeholder-dark: rgba(0, 0, 0, 0.6);
-
 $white: #ffffff;
 $black: #000000;
+$near-black: darken(#294973, 50%);
 
 // borders
 $border-light: 1px solid #cccccc;
