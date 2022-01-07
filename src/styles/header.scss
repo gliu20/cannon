@@ -1,6 +1,5 @@
 @use "variables";
 @use "utilities";
-@use "sass:map";
 
 .header {
     background-color: variables.$primary;
@@ -8,8 +7,9 @@
 }
 
 .header__content {
-    display: flex;
+    @extend %disp-flex;
     align-items: center;
+    
     @extend %max-w-md--md;
     @extend %max-w-lg--lg;
     @extend %my-0;
@@ -25,9 +25,10 @@
 }
 
 .header__content .header__home-link {
+    @extend %disp-flex;
     flex: 1;
-    display: flex;
     align-items: center;
+
     text-decoration: none;
     color: inherit;
 }
@@ -45,17 +46,17 @@
 
 
     border-radius: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .header__wordmark {
     flex: 1;
+
     @extend %font-size-h3;
     @extend %font-size-h2--sm;
     @extend %font-size-h1--md;
     font-family: variables.$fontBrand;
     font-weight: normal;
-    color: #fde487;
+    color: variables.$accentLight;
     text-transform: uppercase;
     text-align: center;
 }
@@ -63,8 +64,8 @@
 .header__motto {
     @extend %disp-none;
     @extend %disp-flex--xs;
-
     flex-direction: column;
+    
     text-transform: capitalize;
     font-family: variables.$fontMotto;
 }
