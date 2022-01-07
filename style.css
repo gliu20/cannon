@@ -35,21 +35,6 @@
 }
 
 
-.article-gallery {
-  display: flex;
-}
-
-.article-gallery > *:not(:last-child) {
-  margin-right: 2rem;
-}
-
-.article-gallery__left,
-.article-gallery__right {
-  flex: 1;
-}
-.article-gallery__center {
-  flex: 3;
-}
 
 
 .article h1,

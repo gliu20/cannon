@@ -1,0 +1,27 @@
+@use "utilities";
+
+.article-gallery {
+    @extend %disp-flex;
+    @extend %flex-wrap-wrap;
+}
+
+.article-gallery > *:not(:last-child) {
+    @extend %mr-2;
+}
+
+.article-gallery__left,
+.article-gallery__right,
+.article-gallery__center {
+    @extend %min-w-12;
+}
+
+.article-gallery__left,
+.article-gallery__right {
+    @extend %flex-1;
+}
+.article-gallery__center {
+    @extend %flex-3;
+    @extend %order--1;
+    @extend %order-0--md;
+    @extend %w-12-12;
+}
