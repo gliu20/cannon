@@ -7,13 +7,28 @@ const IndexPage = () => {
   return (
     <Layout pageTitle="Hello">
       <Section title="Top Highlights">
-      <Card
-        level={3}
-        title="Celebrating Occasions During COVID-19"
-        subtitle="By Kirtana Devaraj"
-        to="/"
-      ></Card>
-    </Section>
+        <Card
+          level={3}
+          title="Celebrating Occasions During COVID-19"
+          subtitle="By Kirtana Devaraj"
+          to="/"
+          modifiers="card--link"
+        ></Card>
+        <Card
+          level={3}
+          title="Celebrating Occasions During COVID-19"
+          subtitle="By Kirtana Devaraj"
+          to="/"
+          modifiers="card--link"
+        ></Card>
+        <Card
+          level={3}
+          title="Celebrating Occasions During COVID-19"
+          subtitle="By Kirtana Devaraj"
+          to="/"
+          modifiers="card--link"
+        ></Card>
+      </Section>
     </Layout >
   )
 }

@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import "../styles/card.scss"
 
-const Card = ({ level, title, subtitle, media, to, children }) => {
+const Card = ({ level, title, subtitle, media, to, modifiers, children }) => {
     let titleEle;
 
     switch (level) {
@@ -39,7 +39,7 @@ const Card = ({ level, title, subtitle, media, to, children }) => {
 
     return (
         <Link to={to} className="card__wrapper">
-            <article className="card card--link">
+            <article className={'card ' + modifiers}>
                 {media}
                 {headerEle}
                 <div className="card__content">
