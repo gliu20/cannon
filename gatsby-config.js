@@ -20,6 +20,9 @@ module.exports = {
       options: {
         name: "images",
         path: "./src/images/",
+        defaults: {
+          placeholder: "blurred"
+        }
       },
       __key: "images",
     },
