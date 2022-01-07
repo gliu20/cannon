@@ -1,5 +1,6 @@
 @use "variables";
 @use "utilities";
+@use "layout";
 
 .menu {
     border-bottom: variables.$borderLight;
@@ -20,24 +21,27 @@
 }
 
 .menu__content {
-    display: flex;
-    max-width: 1400px;
 
-    margin: 0 auto;
+    @include layout.section-flat;
+    @extend %disp-flex;
+    @extend %align-items-stretch;
 }
 
 .menu__list {
-    display: flex;
-    flex: 1;
+
+    @extend %disp-flex;
 
     list-style: none;
-    margin: 0;
-    padding: 0;
+    @extend %m-0;
+    @extend %p-0;
+    @extend %flex-1;
 }
 
 .menu__list-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
+    @extend %disp-flex;
+    @extend %align-items-center;
+    @extend %justify-content-center;
+    @extend %flex-1;
+
+    white-space: nowrap;
 }

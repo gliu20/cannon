@@ -15,3 +15,15 @@
     @extend %py-1--md;
     @extend %px-3--md;
 }
+
+@mixin section-flat {
+    
+    @extend %max-w-md--md;
+    @extend %max-w-lg--lg;
+    @extend %my-0;
+    @extend %mx-auto;
+
+    @extend %px-1_5;
+    @extend %px-2--sm;
+    @extend %px-3--md;
+}
