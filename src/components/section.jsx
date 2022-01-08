@@ -48,6 +48,18 @@ const Section = ({ level, title, children, description, renderAs }) => {
         )
     }
 
+    if (renderAs === "div") {
+
+        return (
+            <div className="section">
+                {headerEle}
+                <div className="section__content">
+                    {children}
+                </div>
+            </div>
+        )
+    }
+
     return (
         <section className="section">
             {headerEle}
