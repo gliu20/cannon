@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import "../styles/section.scss"
 
-const Section = ({ level, title, children, description }) => {
+const Section = ({ level, title, children, description, renderAs }) => {
     let titleEle;
 
     switch (level) {
@@ -35,6 +35,18 @@ const Section = ({ level, title, children, description }) => {
             {titleEle}
             {descriptionEle}
         </header> : ''
+
+    if (renderAs === "aside") {
+
+        return (
+            <aside className="section">
+                {headerEle}
+                <div className="section__content">
+                    {children}
+                </div>
+            </aside>
+        )
+    }
 
     return (
         <section className="section">
