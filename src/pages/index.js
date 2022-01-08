@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
                 mediaModifiers="picture--3by2"
                 title={post.node.title}
                 subtitle={`By ${post.node.author.node.name}`}
-                to={post.node.slug}
+                toSlug={post.node.slug}
                 modifiers="card--link"
               ></Card>)
             }
@@ -46,7 +46,7 @@ const IndexPage = ({ data }) => {
                   mediaModifiers="picture--3by2"
                   title={post.node.title}
                   subtitle={`By ${post.node.author.node.name}`}
-                  to={post.node.slug}
+                  toSlug={post.node.slug}
                   modifiers="card--link"
                 ></Card>)
               }
@@ -64,7 +64,7 @@ const IndexPage = ({ data }) => {
                   title={post.node.title}
                   subtitle={`By ${post.node.author.node.name}`}
                   description={post.node.excerpt}
-                  to={post.node.slug}
+                  toSlug={post.node.slug}
                   modifiers="card--link"
                 ></Card>)
               }
@@ -82,7 +82,7 @@ const IndexPage = ({ data }) => {
             mediaModifiers="picture--3by2"
             title={post.node.title}
             subtitle={`By ${post.node.author.node.name}`}
-            to={post.node.slug}
+            toSlug={post.node.slug}
             modifiers="card--link card--horizontal"
           ></Card>)
         }
