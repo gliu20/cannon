@@ -1,0 +1,81 @@
+@use "variables";
+@use "utilities";
+
+.article__wrapper {
+    @extend %disp-flex;
+
+    @extend %flex-dir-column;
+    @extend %align-items-stretch;
+
+    @extend %flex-dir-row--md;
+    @extend %justify-content-center--md;
+    @extend %align-items-stretch--md;
+}
+
+.article__content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        @extend %m-0;
+        @extend %my-1;
+    }
+
+    // override evil wordpress images with inline styles
+    figure[style] {
+        width: 100% !important;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    ol,
+    ul {
+        @extend %ml-2;
+    }
+
+    a {
+        color: variables.$primary;
+
+        @media (prefers-color-scheme: dark) {
+            color: variables.$primaryLight;
+        }
+    }
+
+    * {
+        word-break: break-word;
+    }
+}
+
+.article {
+    @extend %max-w-80ch;
+    @extend %mb-2;
+}
+
+.article,
+.article__sidebar {
+    @extend %mx-auto;
+    @extend %mx-0--md;
+}
+.article__sidebar {
+    // fallback for browsers w/o calc
+    @extend %max-w-80ch; 
+
+    // ugly calc but it works
+    max-width: calc(80ch + 4rem);
+
+    @extend %w-12-12;
+    @extend %w-auto--md;
+}
+.article * {
+    @extend %font-size-body-1;
+    line-height: 1.5;
+}
+
+.article__title {
+    @extend %font-size-h1;
+}
