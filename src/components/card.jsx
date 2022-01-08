@@ -5,7 +5,7 @@ import Picture from "../components/picture"
 import "../styles/card.scss"
 
 
-const Card = ({ level, title, subtitle, description, mediaSrc, mediaAlt, mediaModifiers, to, modifiers, children }) => {
+const Card = ({ level, title, subtitle, description, mediaSrc, mediaAlt, mediaModifiers, toSlug, modifiers, children }) => {
     let titleEle;
 
     switch (level) {
@@ -47,7 +47,7 @@ const Card = ({ level, title, subtitle, description, mediaSrc, mediaAlt, mediaMo
     const pictureEle = mediaSrc ? <Picture src={mediaSrc} alt={mediaAlt} modifiers={mediaModifiers}></Picture> : ''
 
     return (
-        <Link to={to} className="card__wrapper">
+        <Link to={`/articles/${toSlug}`} className="card__wrapper">
             <article className={'card ' + (modifiers || '')}>
                 {pictureEle}
                 {headerEle}
