@@ -83,3 +83,10 @@
     padding-right: 40%;
     padding-top: 26.7%;
 }
+
+
+// TODO use something other than dumb hack
+// to get rid of the continue reading link
+.card .read-more {
+    display: none;
+}
