@@ -47,7 +47,7 @@ const Card = ({ level, title, subtitle, description, mediaSrc, mediaAlt, mediaMo
     const pictureEle = mediaSrc ? <Picture src={mediaSrc} alt={mediaAlt} modifiers={mediaModifiers}></Picture> : ''
 
     return (
-        <Link to={`/articles/${toSlug}`} className="card__wrapper">
+        <Link to={`/articles/${toSlug}/`} className="card__wrapper">
             <article className={'card ' + (modifiers || '')}>
                 {pictureEle}
                 {headerEle}
