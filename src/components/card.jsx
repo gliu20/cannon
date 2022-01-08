@@ -34,7 +34,9 @@ const Card = ({ level, title, subtitle, description, mediaSrc, mediaAlt, mediaMo
 
     const subtitleEle = subtitle ? <p className="card__subtitle">{subtitle}</p> : ''
 
-    const descriptionEle = <p class="card__body-text">{description}</p>
+    const descriptionEle = <p class="card__body-text" dangerouslySetInnerHTML={({
+        '__html': description
+    })}></p>
 
     const headerEle = title || subtitle ?
         <header className="card__header">
