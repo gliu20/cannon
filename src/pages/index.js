@@ -111,11 +111,6 @@ export const query = graphql`query contextQuery {
           }
         }
         date
-        categories {
-          nodes {
-            name
-          }
-        }
       }
     }
   }
