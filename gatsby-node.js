@@ -1,7 +1,6 @@
 
-
-exports.createPages = async ({ actions, grapql, reporter }) => {
-    const result = grapql`
+exports.createPages = async ({ actions, graphql, reporter }) => {
+    const result = await graphql(`
     {
         allWpPost {
             nodes {
@@ -10,7 +9,7 @@ exports.createPages = async ({ actions, grapql, reporter }) => {
             }
         }
     }
-    `;
+    `);
 
     if (result.errors) {
         reporter.error("Error fetching Wordpress data. Probably has to do with the graphql query in gatsby-node.js", result.errors);
@@ -21,7 +20,7 @@ exports.createPages = async ({ actions, grapql, reporter }) => {
 
     posts.nodes.forEach(post => {
         actions.createPage({
-            path: `/articles/${post.slug}`,
+            path: `/articles/${post.slug}/`,
             component: template,
             // sends post object to template
             // under this.props.pageContext
