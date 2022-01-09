@@ -24,6 +24,7 @@
 .section__description {
     @extend %font-size-body-1;
     @extend %max-w-60ch;
+    @extend %mt-1;
 
     font-style: italic;
 }
