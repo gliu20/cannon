@@ -61,7 +61,7 @@ const extractTopicWords = (content) => {
     return topWordCounts;
 }
 
-const createArticlePages = ({ result, actions }) => {
+const createArticlePages = ({ result, actions, reporter }) => {
     const posts = result.data.allWpPost;
     const template = require.resolve(`./src/templates/article.js`)
 
