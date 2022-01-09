@@ -85,6 +85,13 @@
 }
 
 
+.footer__about-socials a {
+    color: variables.$accentLight;
+    text-transform: uppercase;
+    @extend %py-1;
+    @extend %mr-1;
+}
+
 // TODO extract button css elsewhere
 
 .button {
