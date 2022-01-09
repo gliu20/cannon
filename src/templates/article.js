@@ -58,26 +58,21 @@ const Article = ({ data, pageContext }) => {
                 // it works by funnelling articles down progressive
                 // rolls where articles remaining at the top of the list stay 
 
-                // randomly picking the top 50 from results
-                // but favouring recent articles
+                // keep longest articles on top
+                .sort((a,b) => b.node.slug.length - a.node.slug.length)
+                // select top 15 randomly
                 .map((value, i) => ({ value, sort: Math.random() * (i + 1) }))
                 .sort((a, b) => a.sort - b.sort)
-                .map(({ value }) => value)
-                .slice(0, 50)
+                .slice(0, 15)
 
-                // randomly pick the top 25 from results
-                // but favouring articles still at the top of the top list
-                .map((value, i) => ({ value, sort: Math.random() * (i + 1) }))
+                // select top 10 randomly preferring top
+                .map((value, i) => { value.sort = Math.random() * (i + 1); return value; })
                 .sort((a, b) => a.sort - b.sort)
                 .map(({ value }) => value)
-                .slice(0, 25)
+                .slice(0, 10)
+              }>
 
-                // randomly pick the top 10 from results
-                // but favouring articles still at the top of the list
-                .map((value, i) => ({ value, sort: Math.random() * (i + 1) }))
-                .sort((a, b) => a.sort - b.sort)
-                .map(({ value }) => value)
-                .slice(0, 10)}></Recommended>
+              </Recommended>
             </Section>
           </div>
         </div>
@@ -116,7 +111,12 @@ export const query = graphql`
       }
     }
 
-    allWpPost(filter: {content: {regex: $topicsRegex}, id: {ne: $id}}) {
+    allWpPost(
+      filter: {content: {regex: $topicsRegex}
+      id: {ne: $id}}
+      limit: 25
+      sort: {fields: date, order: DESC}
+    ) {
       edges {
           node {
               title
