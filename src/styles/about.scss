@@ -5,6 +5,9 @@
 // component 
 
 .about {
+    @extend %mx-auto;
+    @extend %max-w-100ch;
+
     h1,
     h2,
     h3,
