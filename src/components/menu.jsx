@@ -28,7 +28,10 @@ const Menu = () => {
                         <Link className="button button--text" to="/about/">About</Link>
                     </li>
                 </ul>
-                <button className="search">Search</button>
+                {
+                    // TODO add search later on
+                    //<button className="search">Search</button>
+                }
             </div>
         </nav>
     )
