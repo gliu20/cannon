@@ -1,8 +1,14 @@
 
 
 const denyList = {
+    "a": true, "b": true, "c": true, "d": true, "e": true, "f": true,
+    "g": true, "h": true, "i": true, "j": true, "k": true, "l": true,
+    "m": true, "n": true, "o": true, "p": true, "q": true, "r": true,
+    "s": true, "t": true, "u": true, "v": true, "w": true, "x": true,
+    "nt": true, "being": true, "were": true, "won": true, "didn": true,
+    "through": true, "things": true, "https": true, "http": true,
+    "y": true, "z": true, "to": true, "of": true, "and": true, "in": true,
     "the": true, "are": true, "was": true, "is": true, "be": true,
-    "to": true, "of": true, "and": true, "a": true, "in": true,
     "that": true, "have": true, "i": true, "it": true, "for": true,
     "not": true, "on": true, "with": true, "he": true, "as": true,
     "you": true, "do": true, "at": true, "this": true, "but": true,
@@ -21,7 +27,8 @@ const denyList = {
     "use": true, "two": true, "how": true, "our": true, "work": true,
     "first": true, "well": true, "way": true, "even": true, "new": true,
     "want": true, "because": true, "any": true, "these": true, "give": true,
-    "day": true, "most": true, "us": true, "had": true, "did": true
+    "day": true, "most": true, "us": true, "had": true, "did": true,
+    "myself": true,
 };
 
 const countWords = (acc, val) => {
