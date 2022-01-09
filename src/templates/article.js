@@ -50,7 +50,7 @@ const Article = ({ data, pageContext }) => {
               //<Section renderAs="aside" title="Share"></Section>
             }
             <Section renderAs="aside" title="See also">
-              <Recommended recommendedPosts={data.allWpPost
+              <Recommended recommendedPosts={data.allWpPost.edges
 
                 // this sequence ensures a good mix of recent
                 // and old articles

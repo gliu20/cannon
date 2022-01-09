@@ -4,7 +4,7 @@ import Card from './card'
 
 
 const Recommended = ({ recommendedPosts }) => {
-    const posts = recommendedPosts.edges;
+    const posts = recommendedPosts;
     return (
         <div>
             {
