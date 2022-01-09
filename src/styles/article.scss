@@ -60,13 +60,18 @@
 .article__sidebar {
     @extend %mx-auto;
     @extend %mx-0--md;
+    @extend %mr-2--md;
+
+    // TODO remove
+    // evil manipulation of section component
+    .section__header,
+    .section__content {
+        @extend %px-0;
+    }
 }
 .article__sidebar {
-    // fallback for browsers w/o calc
-    @extend %max-w-80ch; 
-
-    // ugly calc but it works
-    max-width: calc(80ch + 4rem);
+    @extend %max-w-80ch;
+    @extend %max-w-32--md;
 
     @extend %w-12-12;
     @extend %w-auto--md;

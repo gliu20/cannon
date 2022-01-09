@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Section from "../components/section"
 import Picture from "../components/picture"
+import Tag from "../components/tag"
+
 import "../styles/article.scss"
 
 const Article = ({ data }) => {
@@ -27,9 +29,18 @@ const Article = ({ data }) => {
             })}></div>
           </article>
           <div className="article__sidebar">
-            <Section renderAs="aside" title="Tags"></Section>
-            <Section renderAs="aside" title="Share"></Section>
-            <Section renderAs="aside" title="See also"></Section>
+            <Section renderAs="aside" title="Tags">
+              <Tag to="/">Skule&trade;</Tag>
+              <Tag to="/">TODO</Tag>
+              <Tag to="/">External</Tag>
+            </Section>
+            {
+              // TODO add sharer
+              //<Section renderAs="aside" title="Share"></Section>
+            }
+            <Section renderAs="aside" title="See also">
+              
+            </Section>
           </div>
         </div>
       </Section>
