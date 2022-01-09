@@ -61,25 +61,7 @@ const extractTopicWords = (content) => {
     return topWordCounts;
 }
 
-
-
-exports.createPages = async ({ actions, graphql, reporter }) => {
-    const result = await graphql(`
-    {
-        allWpPost {
-            nodes {
-                id
-                slug
-                content
-            }
-        }
-    }
-    `);
-
-    if (result.errors) {
-        reporter.error("Error fetching Wordpress data. Probably has to do with the graphql query in gatsby-node.js", result.errors);
-    }
-
+const createArticlePages = ({ result, actions }) => {
     const posts = result.data.allWpPost;
     const template = require.resolve(`./src/templates/article.js`)
 
@@ -99,4 +81,54 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
         })
     });
+}
+
+const createCategoryPages = ({ result, actions }) => {
+    const categories = result.data.allWpCategory;
+    const template = require.resolve(`./src/templates/category.js`)
+
+    categories.nodes.forEach(category => {
+
+        createRedirect({
+            fromPath: category.slug,
+            toPath: category.uri,
+        });
+
+        actions.createPage({
+            path: category.uri,
+            component: template,
+            // sends to template via this.props.pageContext
+            context: {
+                id: category.id,
+            }
+        })
+    });
+}
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+    const result = await graphql(`
+    {
+        allWpPost {
+            nodes {
+                id
+                slug
+                content
+            }
+        }
+        allWpCategory {
+            nodes {
+                id
+                uri
+                slug
+            }
+        }
+    }
+    `);
+
+    if (result.errors) {
+        reporter.error("Error fetching Wordpress data. Probably has to do with the graphql query in gatsby-node.js", result.errors);
+    }
+
+    createArticlePages({ result, actions });
+    createCategoryPages({ result, actions });
 }
