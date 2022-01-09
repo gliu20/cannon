@@ -14,6 +14,8 @@
 );
 @include responsive.directionalResponsiveAll("p", "padding", variables.$spacing);
 
+@include responsive.responsiveAll("min-w","min-width",variables.$dimensions);
+@include responsive.responsiveAll("min-h","min-height",variables.$dimensions);
 @include responsive.responsiveAll("max-w","max-width",variables.$dimensions);
 @include responsive.responsiveAll("max-h","max-height",variables.$dimensions);
 @include responsive.responsiveAll("w","width",variables.$dimensions);
@@ -32,3 +34,4 @@
 @include responsive.responsiveAll("align-self","align-self", variables.$flexAlign);
 @include responsive.responsiveAll("align-items","align-items", variables.$flexAlign);
 @include responsive.responsiveAll("align-content","align-content", variables.$flexJustify);
+@include responsive.responsiveAll("order","order", variables.$orderScale);

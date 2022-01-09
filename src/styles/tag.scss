@@ -1,0 +1,27 @@
+@use "variables";
+@use "utilities";
+
+.tag {
+    @extend %disp-inline-block;
+    @extend %py-0_5;
+    @extend %px-1;
+    @extend %mr-1;
+    @extend %mb-1;
+    @extend %font-size-body-4;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: variables.$black;
+    background-color: variables.$accent;
+
+    @media (prefers-color-scheme: dark) {
+        color: variables.$black;
+        background-color: variables.$accentLight;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

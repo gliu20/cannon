@@ -13,6 +13,7 @@ $breakpoints: (
 
 // colors
 $primary: #294973;
+$primaryLight: lighten(#294973, 35%);
 $accent: #fac809;
 $accentLight: #fde487;
 
@@ -23,28 +24,42 @@ $nearBlack: darken($primary, 26%);
 // borders
 $borderLight: 1px solid #cccccc;
 $borderPrimary: 3px solid $primary;
+$borderPrimaryLight: 3px solid $primaryLight;
 
 $dimensions: map.merge(
     $breakpoints,
     (
-        "1-12": 1 / 12 * 100%,
-        "2-12": 2 / 12 * 100%,
-        "3-12": 3 / 12 * 100%,
-        "4-12": 4 / 12 * 100%,
-        "5-12": 5 / 12 * 100%,
-        "6-12": 6 / 12 * 100%,
-        "7-12": 7 / 12 * 100%,
-        "8-12": 8 / 12 * 100%,
-        "9-12": 9 / 12 * 100%,
-        "10-12": 10 / 12 * 100%,
-        "11-12": 11 / 12 * 100%,
-        "12-12": 12 / 12 * 100%,
+        "60ch": 60ch,
+        "80ch": 80ch,
+        "1-12": calc(1 / 12) * 100%,
+        "2-12": calc(2 / 12) * 100%,
+        "3-12": calc(3 / 12) * 100%,
+        "4-12": calc(4 / 12) * 100%,
+        "5-12": calc(5 / 12) * 100%,
+        "6-12": calc(6 / 12) * 100%,
+        "7-12": calc(7 / 12) * 100%,
+        "8-12": calc(8 / 12) * 100%,
+        "9-12": calc(9 / 12) * 100%,
+        "10-12": calc(10 / 12) * 100%,
+        "11-12": calc(11 / 12) * 100%,
+        "12-12": calc(12 / 12) * 100%,
         "0": 0,
         "1": 1rem,
         "2": 2rem,
         "3": 3rem,
         "4": 4rem,
         "5": 5rem,
+        "6": 6rem,
+        "7": 7rem,
+        "8": 8rem,
+        "9": 9rem,
+        "10": 10rem,
+        "11": 11rem,
+        "12": 12rem,
+        "16": 16rem,
+        "20": 20rem,
+        "26": 20rem,
+        "32": 32rem,
         "auto": auto,
     )
 );
@@ -107,6 +122,12 @@ $flexScale: (
     "10": 10,
     "11": 11,
     "12": 12,
+);
+
+$orderScale: (
+    "-1": -1,
+    "0": 0,
+    "1": 1,
 );
 
 $flexWrap: (
