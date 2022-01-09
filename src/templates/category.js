@@ -11,9 +11,10 @@ const Category = ({ data, pageContext }) => {
   return (<Layout>
     <Section level={1}
       title={data.wpCategory.name}
-      description={data.wpCategory.description}
+      description={data.wpCategory.description ||
+        `Stay up to date on news, events, and topics with ${data.wpCategory.name} entries from Cannon contributors.`}
     >
-      {data.wpCategory.posts.nodes.map(post =>
+      {data.wpCategory.posts.nodes.map((post, i) =>
         <Card level={2}
           mediaSrc={post.node?.featuredImage?.node?.sourceUrl || true}
           mediaAlt={post.node?.featuredImage?.node?.alt || post.node?.featuredImage?.node?.title}
@@ -24,7 +25,7 @@ const Category = ({ data, pageContext }) => {
           subtitle={`By ${post.author.node.name}`}
 
           toSlug={post.slug}
-          modifiers="card--link card--horizontal"
+          modifiers={`card--link card--horizontal${i === 0 ? ' card--featured' : ''}`}
         ></Card>)
       }
     </Section>
