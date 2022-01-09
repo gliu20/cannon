@@ -68,6 +68,10 @@ const createArticlePages = ({ result, actions }) => {
     posts.nodes.forEach(post => {
 
         const topics = extractTopicWords(post.content);
+
+
+        reporter.log(`[gatsby-node.js/createArticle] creating page ${post.slug}`)
+
         actions.createPage({
             path: `/articles/${post.slug}/`,
             component: template,
@@ -83,16 +87,22 @@ const createArticlePages = ({ result, actions }) => {
     });
 }
 
-const createCategoryPages = ({ result, actions }) => {
+const createCategoryPages = ({ result, actions, reporter }) => {
     const categories = result.data.allWpCategory;
     const template = require.resolve(`./src/templates/category.js`)
 
     categories.nodes.forEach(category => {
 
-        createRedirect({
-            fromPath: category.slug,
+        reporter.log(`[gatsby-node.js/createCategory] creating redirect from ${category.slug} to ${category.uri}`)
+
+        actions.createRedirect({
+            fromPath: `/${category.slug}/`,
             toPath: category.uri,
+            isPermanent: true
         });
+
+
+        reporter.log(`[gatsby-node.js/createCategory] creating page ${category.uri}`)
 
         actions.createPage({
             path: category.uri,
@@ -129,6 +139,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         reporter.error("Error fetching Wordpress data. Probably has to do with the graphql query in gatsby-node.js", result.errors);
     }
 
-    createArticlePages({ result, actions });
-    createCategoryPages({ result, actions });
+    createArticlePages({ result, actions, reporter });
+    createCategoryPages({ result, actions, reporter });
 }
