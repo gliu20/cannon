@@ -115,6 +115,37 @@ const createCategoryPages = ({ result, actions, reporter }) => {
     });
 }
 
+
+// TODO refactor for DRY
+
+const createTagPages = ({ result, actions, reporter }) => {
+    const tags = result.data.allWpTag;
+    const template = require.resolve(`./src/templates/tagPage.js`)
+
+    tags.nodes.forEach(tag => {
+
+        reporter.log(`[gatsby-node.js/createTag] creating redirect from ${tag.slug} to ${tag.uri}`)
+
+        actions.createRedirect({
+            fromPath: `/${tag.slug}/`,
+            toPath: tag.uri,
+            isPermanent: true
+        });
+
+
+        reporter.log(`[gatsby-node.js/createTag] creating page ${tag.uri}`)
+
+        actions.createPage({
+            path: tag.uri,
+            component: template,
+            // sends to template via this.props.pageContext
+            context: {
+                id: tag.id,
+            }
+        })
+    });
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
     const result = await graphql(`
     {
@@ -132,6 +163,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 slug
             }
         }
+        allWpTag {
+            nodes {
+                id
+                uri
+                slug
+            }
+        }
     }
     `);
 
@@ -141,4 +179,5 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     createArticlePages({ result, actions, reporter });
     createCategoryPages({ result, actions, reporter });
+    createTagPages({ result, actions, reporter });
 }
