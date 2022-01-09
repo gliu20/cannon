@@ -10,9 +10,14 @@
 }
 
 .article-gallery__left,
-.article-gallery__right,
+.article-gallery__right {
+    @extend %min-w-12;
+}
+
 .article-gallery__center {
     @extend %min-w-12;
+    @extend %min-w-20--xs;
+    @extend %min-w-32--sm;
 }
 
 .article-gallery__left,
