@@ -4,11 +4,16 @@ import Layout from "../components/layout"
 import Section from "../components/section"
 import Picture from "../components/picture"
 import Tag from "../components/tag"
-import Card from "../components/card"
+import Recommended from "../components/recommended"
+
+//import  from "../lib/recommender"
 
 import "../styles/article.scss"
 
-const Article = ({ data }) => {
+// TODO a lot of complexity in one spot
+// might want to refactor
+
+const Article = ({ data, pageContext }) => {
   return (
     <Layout pageTitle={data.wpPost.title}>
       <Section>
@@ -30,37 +35,22 @@ const Article = ({ data }) => {
             })}></div>
           </article>
           <div className="article__sidebar">
-            <Section renderAs="aside" title="Tags">
-              <Tag to="/">Skule&trade;</Tag>
-              <Tag to="/">TODO</Tag>
-              <Tag to="/">External</Tag>
-            </Section>
+            {
+              data.wpPost.terms.nodes ?
+                <Section renderAs="aside" title="Tags">
+                  {
+                    data.wpPost.terms.nodes.map(tag =>
+                      <Tag to={tag.uri}>{tag.name}</Tag>)
+                  }
+                </Section> : ''
+            }
+
             {
               // TODO add sharer
               //<Section renderAs="aside" title="Share"></Section>
             }
             <Section renderAs="aside" title="See also">
-              <Card
-                level={3}
-                title="Stasis Theory and How to Be Persuasive"
-                subtitle="By Aristotle Philosopher"
-                toSlug="/"
-                modifiers="card--link"
-              ></Card>
-              <Card
-                level={3}
-                title="What Happens to Long Text on a Post Snippet?"
-                subtitle="By Concerned Software Tester"
-                toSlug="/"
-                modifiers="card--link"
-              ></Card>
-              <Card
-                level={3}
-                title="When Your Dog is Better Than You"
-                subtitle="By Non-Dog Owner"
-                toSlug="/"
-                modifiers="card--link"
-              ></Card>
+              <Recommended recommendedPosts={data.allWpPost}></Recommended>
             </Section>
           </div>
         </div>
@@ -74,7 +64,7 @@ export default Article
 // gatsby is smart enough to get post based on
 // id passed into this.props.pageContext
 export const query = graphql`
-  query($id: String) {
+  query($id: String, $topics: String) {
     wpPost(id: { eq: $id }) {
       id
       title
@@ -84,6 +74,32 @@ export const query = graphql`
           caption
           sourceUrl
         }
+      }
+      terms {
+        nodes {
+          ... on WpCategory {
+            name
+            uri
+          }
+          ... on WpTag {
+            name
+            uri
+          }
+        }
+      }
+    }
+
+    allWpPost(filter: {content: {regex: $topics}}) {
+      edges {
+          node {
+              title
+              author {
+                  node {
+                      name
+                  }
+              }
+              slug
+          }
       }
     }
   }
