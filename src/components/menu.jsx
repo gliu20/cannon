@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import { Link } from 'gatsby'
 import "../styles/menu.scss"
 
 // TODO refactor out link data
@@ -10,25 +10,28 @@ const Menu = () => {
             <div className="menu__content">
                 <ul className="menu__list">
                     <li className="menu__list-item">
-                        <a className="button button--text" href="category.html">Skule&trade;</a>
+                        <Link className="button button--text" to="/category/skule/">Skule&trade;</Link>
                     </li>
                     <li className="menu__list-item">
-                        <a className="button button--text" href="category.html">Student Life</a>
+                        <Link className="button button--text" to="/category/student-life/">Student Life</Link>
                     </li>
                     <li className="menu__list-item">
-                        <a className="button button--text" href="category.html">Opinions</a>
+                        <Link className="button button--text" to="/category/opinions/">Opinions</Link>
                     </li>
                     <li className="menu__list-item">
-                        <a className="button button--text" href="category.html">Gallery</a>
+                        <Link className="button button--text" to="/category/gallery/">Gallery</Link>
                     </li>
                     <li className="menu__list-item">
-                        <a className="button button--text" href="category.html">Issues</a>
+                        <Link className="button button--text" to="/issues/">Issues</Link>
                     </li>
                     <li className="menu__list-item">
-                        <a className="button button--text" href="category.html">About</a>
+                        <Link className="button button--text" to="/about/">About</Link>
                     </li>
                 </ul>
-                <button className="search">Search</button>
+                {
+                    // TODO add search later on
+                    //<button className="search">Search</button>
+                }
             </div>
         </nav>
     )

@@ -6,7 +6,6 @@ import Picture from "../components/picture"
 import Tag from "../components/tag"
 import Recommended from "../components/recommended"
 
-//import  from "../lib/recommender"
 
 import "../styles/article.scss"
 
@@ -50,7 +49,29 @@ const Article = ({ data, pageContext }) => {
               //<Section renderAs="aside" title="Share"></Section>
             }
             <Section renderAs="aside" title="See also">
-              <Recommended recommendedPosts={data.allWpPost}></Recommended>
+              <Recommended recommendedPosts={data.allWpPost.edges
+
+                // this sequence ensures a good mix of recent
+                // and old articles
+
+                // it works by funnelling articles down progressive
+                // rolls where articles remaining at the top of the list stay 
+
+                // keep longest articles on top
+                .sort((a,b) => b.node.slug.length - a.node.slug.length)
+                // select top 15 randomly
+                .map((value, i) => ({ value, sort: Math.random() * (i + 1) }))
+                .sort((a, b) => a.sort - b.sort)
+                .slice(0, 15)
+
+                // select top 10 randomly preferring top
+                .map((value, i) => { value.sort = Math.random() * (i + 1); return value; })
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value)
+                .slice(0, 10)
+              }>
+
+              </Recommended>
             </Section>
           </div>
         </div>
@@ -89,7 +110,12 @@ export const query = graphql`
       }
     }
 
-    allWpPost(filter: {content: {regex: $topicsRegex}, id: {ne: $id}}) {
+    allWpPost(
+      filter: {content: {regex: $topicsRegex}
+      id: {ne: $id}}
+      limit: 25
+      sort: {fields: date, order: DESC}
+    ) {
       edges {
           node {
               title

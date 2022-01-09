@@ -7,7 +7,9 @@ import "../styles/picture.scss"
 const Picture = ({ src, alt, modifiers }) => {
     return (
         <div className={"picture " + (modifiers || '')}>
-            <img className="picture__img" alt={alt} src={src}></img>
+            {(src === true || src === null) ? 
+                '' : // just use placeholder background img 
+                <img className="picture__img" alt={alt} src={src}></img>}
         </div>
     )
 }

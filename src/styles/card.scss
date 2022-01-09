@@ -80,8 +80,12 @@
 }
 
 .card--featured .picture {
-    padding-right: 40%;
-    padding-top: 26.7%;
+    @media (min-width: map.get(variables.$breakpoints,"sm")) {
+        & {
+            padding-right: 40%;
+            padding-top: 26.7%;
+        }
+    }
 }
 
 

@@ -61,31 +61,17 @@ const extractTopicWords = (content) => {
     return topWordCounts;
 }
 
-
-
-exports.createPages = async ({ actions, graphql, reporter }) => {
-    const result = await graphql(`
-    {
-        allWpPost {
-            nodes {
-                id
-                slug
-                content
-            }
-        }
-    }
-    `);
-
-    if (result.errors) {
-        reporter.error("Error fetching Wordpress data. Probably has to do with the graphql query in gatsby-node.js", result.errors);
-    }
-
+const createArticlePages = ({ result, actions, reporter }) => {
     const posts = result.data.allWpPost;
     const template = require.resolve(`./src/templates/article.js`)
 
     posts.nodes.forEach(post => {
 
         const topics = extractTopicWords(post.content);
+
+
+        reporter.log(`[gatsby-node.js/createArticle] creating page ${post.slug}`)
+
         actions.createPage({
             path: `/articles/${post.slug}/`,
             component: template,
@@ -99,4 +85,99 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
         })
     });
+}
+
+const createCategoryPages = ({ result, actions, reporter }) => {
+    const categories = result.data.allWpCategory;
+    const template = require.resolve(`./src/templates/category.js`)
+
+    categories.nodes.forEach(category => {
+
+        reporter.log(`[gatsby-node.js/createCategory] creating redirect from ${category.slug} to ${category.uri}`)
+
+        actions.createRedirect({
+            fromPath: `/${category.slug}/`,
+            toPath: category.uri,
+            isPermanent: true
+        });
+
+
+        reporter.log(`[gatsby-node.js/createCategory] creating page ${category.uri}`)
+
+        actions.createPage({
+            path: category.uri,
+            component: template,
+            // sends to template via this.props.pageContext
+            context: {
+                id: category.id,
+            }
+        })
+    });
+}
+
+
+// TODO refactor for DRY
+
+const createTagPages = ({ result, actions, reporter }) => {
+    const tags = result.data.allWpTag;
+    const template = require.resolve(`./src/templates/tagPage.js`)
+
+    tags.nodes.forEach(tag => {
+
+        reporter.log(`[gatsby-node.js/createTag] creating redirect from ${tag.slug} to ${tag.uri}`)
+
+        actions.createRedirect({
+            fromPath: `/${tag.slug}/`,
+            toPath: tag.uri,
+            isPermanent: true
+        });
+
+
+        reporter.log(`[gatsby-node.js/createTag] creating page ${tag.uri}`)
+
+        actions.createPage({
+            path: tag.uri,
+            component: template,
+            // sends to template via this.props.pageContext
+            context: {
+                id: tag.id,
+            }
+        })
+    });
+}
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+    const result = await graphql(`
+    {
+        allWpPost {
+            nodes {
+                id
+                slug
+                content
+            }
+        }
+        allWpCategory {
+            nodes {
+                id
+                uri
+                slug
+            }
+        }
+        allWpTag {
+            nodes {
+                id
+                uri
+                slug
+            }
+        }
+    }
+    `);
+
+    if (result.errors) {
+        reporter.error("Error fetching Wordpress data. Probably has to do with the graphql query in gatsby-node.js", result.errors);
+    }
+
+    createArticlePages({ result, actions, reporter });
+    createCategoryPages({ result, actions, reporter });
+    createTagPages({ result, actions, reporter });
 }

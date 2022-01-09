@@ -5,8 +5,8 @@
 .footer {
     background-color: variables.$primary;
     color: variables.$white;
-    @extend %py-1;
-    @extend %py-2--sm;
+    
+    @extend %py-2;
     @extend %py-3--md;
 }
 
@@ -84,6 +84,13 @@
     @extend %align-items-center;
 }
 
+
+.footer__about-socials a {
+    color: variables.$accentLight;
+    text-transform: uppercase;
+    @extend %py-1;
+    @extend %mr-1;
+}
 
 // TODO extract button css elsewhere
 

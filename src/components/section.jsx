@@ -29,7 +29,8 @@ const Section = ({ level, title, children, description, renderAs }) => {
             break;
     }
 
-    const descriptionEle = description ? <p className="section__description">{description}</p> : ''
+    const descriptionEle = description ? <p className="section__description"
+        dangerouslySetInnerHTML={{'__html':description}}></p> : ''
     const headerEle = title || description ?
         <header className="section__header">
             {titleEle}

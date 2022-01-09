@@ -14,10 +14,13 @@ const Footer = () => {
                     <p className="footer__about-wordmark">The Cannon</p>
                     <p className="footer__about-description">The official (serious) newspaper of the University of Toronto
                         Engineering Society since 1978.</p>
-                    <div className="footer__about-socials">
-                        <a href="https://www.instagram.com/cannon.news/">insta</a>
-                        <a href="https://www.facebook.com/cannon.news/">fb</a>
-                    </div>
+                    {
+                        // TODO add social icons later on
+                        //<div className="footer__about-socials">
+                        //    <a href="https://www.instagram.com/cannon.news/">Instagram</a>
+                        //    <a href="https://www.facebook.com/cannon.news/">Facebook</a>
+                        //</div>
+                    }
                 </div>
                 <div className="footer__nav">
                     <div className="footer__links">

@@ -19,12 +19,10 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
-        defaults: {
-          placeholder: "blurred"
-        }
+        path: "./src/images/"
       },
       __key: "images",
     },
+    "gatsby-plugin-netlify"// needed for redirect support
   ],
 };
