@@ -22,16 +22,16 @@ const Footer = () => {
                 <div className="footer__nav">
                     <div className="footer__links">
                         <ul className="footer__links-column">
-                            <li><Link className="button button--link" to="">About</Link></li>
-                            <li><Link className="button button--link" to="">Contact</Link></li>
-                            <li><Link className="button button--link" to="">EngSoc</Link></li>
+                            <li><Link className="button button--link" to="/about/">About</Link></li>
+                            <li><Link className="button button--link" to="/about/#contact">Contact</Link></li>
+                            <li><a className="button button--link" href="https://skule.ca">EngSoc</a></li>
                         </ul>
                         <ul className="footer__links-column">
-                            <li><Link className="button button--link" to="">Past Issues</Link></li>
-                            <li><Link className="button button--link" to="">Skule&trade;</Link></li>
-                            <li><Link className="button button--link" to="">Student Life</Link></li>
-                            <li><Link className="button button--link" to="">Opinions</Link></li>
-                            <li><Link className="button button--link" to="">Gallery</Link></li>
+                            <li><Link className="button button--link" to="/issues/">Past Issues</Link></li>
+                            <li><Link className="button button--link" to="/category/skule/">Skule&trade;</Link></li>
+                            <li><Link className="button button--link" to="/category/student-life/">Student Life</Link></li>
+                            <li><Link className="button button--link" to="/category/opinions/">Opinions</Link></li>
+                            <li><Link className="button button--link" to="/category/gallery/">Gallery</Link></li>
                         </ul>
                     </div>
                     <div className="footer__logo">
