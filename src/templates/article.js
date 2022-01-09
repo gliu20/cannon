@@ -6,7 +6,6 @@ import Picture from "../components/picture"
 import Tag from "../components/tag"
 import Recommended from "../components/recommended"
 
-//import  from "../lib/recommender"
 
 import "../styles/article.scss"
 
