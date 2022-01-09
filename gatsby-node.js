@@ -28,7 +28,8 @@ const denyList = {
     "first": true, "well": true, "way": true, "even": true, "new": true,
     "want": true, "because": true, "any": true, "these": true, "give": true,
     "day": true, "most": true, "us": true, "had": true, "did": true,
-    "myself": true,
+    "myself": true, "become": true, "became": true, "more": true, "com": true,
+    "srcset": true,
 };
 
 const countWords = (acc, val) => {
@@ -46,7 +47,7 @@ const countWords = (acc, val) => {
 const extractTopicWords = (content) => {
     const wordCounts = content
         // crappy HTML remover
-        .replace(/<[^>]*>/g, '')
+        .replace(/<[^>]+?>/g, '')
         .match(/\w+/g)
         .map(i => i.toLowerCase())
         .reduce(countWords, {});
@@ -83,6 +84,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const template = require.resolve(`./src/templates/article.js`)
 
     posts.nodes.forEach(post => {
+
+        const topics = extractTopicWords(post.content);
         actions.createPage({
             path: `/articles/${post.slug}/`,
             component: template,
@@ -91,7 +94,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             context: {
                 id: post.id,
                 // add topics regex for recommendation engine
-                topics: `/${extractTopicWords(post.content).join("|")}/gi`
+                topics: topics,
+                topicsRegex: `/${topics.join("|")}/gi`
             }
         })
     });

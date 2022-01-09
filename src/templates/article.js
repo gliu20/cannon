@@ -64,7 +64,7 @@ export default Article
 // gatsby is smart enough to get post based on
 // id passed into this.props.pageContext
 export const query = graphql`
-  query($id: String, $topics: String) {
+  query($id: String, $topicsRegex: String) {
     wpPost(id: { eq: $id }) {
       id
       title
@@ -89,7 +89,7 @@ export const query = graphql`
       }
     }
 
-    allWpPost(filter: {content: {regex: $topics}}) {
+    allWpPost(filter: {content: {regex: $topicsRegex}, id: {ne: $id}}) {
       edges {
           node {
               title

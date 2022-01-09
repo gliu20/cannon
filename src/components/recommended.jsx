@@ -16,7 +16,12 @@ const Recommended = ({ recommendedPosts }) => {
                         toSlug={post.node.slug}
                         modifiers="card--link"
                     ></Card>
-                ).slice(0,10)
+                )
+                    // randomly pick the top 10 from results
+                    .map((value) => ({ value, sort: Math.random() }))
+                    .sort((a, b) => a.sort - b.sort)
+                    .map(({ value }) => value)
+                    .slice(0, 10)
             }
         </div>
     )
